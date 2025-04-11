@@ -24,7 +24,7 @@ const App = () => {
       </main>
 
       <footer className="app-footer">
-        <p>© 2025 Calculadora de BTUs - Desenvolvido por xAI</p>
+        <p>© 2025 Calculadora de BTUs - Desenvolvido por SubZero21</p>
       </footer>
     </div>
   );
