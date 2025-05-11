@@ -1,42 +1,46 @@
-# Calculadora de BTUs
+# 🧮 Calculadora de BTUs
 
-Uma aplicação web para calcular a potência ideal de ar-condicionado (em BTUs) com base na área, número de pessoas e aparelhos eletrônicos e busca instaladores pelo cep.
+Uma aplicação web para calcular a potência ideal de ar-condicionado (em BTUs) com base na área, número de pessoas e aparelhos eletrônicos, além de buscar instaladores pelo CEP.
 
-## Funcionalidades
+## ✨ Funcionalidades
 
-- **Cálculo de BTUs**:  
-  Insira a área (m²), número de pessoas e aparelhos eletrônicos para calcular a potência necessária.
+- **Cálculo de BTUs** 🌀  
+  Insira a área (m²), número de pessoas e aparelhos eletrônicos para determinar a potência necessária do ar-condicionado.
 
-- **Autenticação**:  
-  Um sistema suimples de senha protegida por criptográfia.
+- **Autenticação Segura** 🔒  
+  Sistema de login com senha protegida por criptografia.
 
-- **Design Responsivo**:  
-  Interface adaptável para desktops e dispositivos móveis.
+- **Design Responsivo** 📱💻  
+  Interface adaptável para desktops e dispositivos móveis, garantindo uma experiência fluida.
 
-## Tecnologias Utilizadas
+- **Busca de Instaladores** 📍  
+  Localize instaladores de ar-condicionado próximos ao seu CEP.
 
-- **Frontend**: React.js, CSS
-- **Backend**: Node.js (assumido, ajustar conforme seu servidor)
-- **API**: Fetch nativo para comunicação com o servidor
-- **Estilização**: CSS customizado com transições e sombras
+## 🛠️ Tecnologias Utilizadas
 
-## Pré-requisitos
+- **Frontend**: ⚛️ React.js, 🎨 CSS  
+- **Backend**: 🖥️ Node.js (ajustar conforme o servidor utilizado)  
+- **API**: 🌐 Fetch nativo para comunicação com o servidor  
+- **Estilização**: 🖌️ CSS customizado com transições suaves e sombras  
 
-Certifique-se de ter os seguintes pré-requisitos instalados em sua máquina:
+## 📋 Pré-requisitos
 
-- [Node.js](https://nodejs.org/) (versão 14 ou superior)
-- [npm](https://www.npmjs.com/) (geralmente incluído com o Node.js)
-- Um servidor backend configurado em `http://localhost:5000` com os endpoints `/login`, `/register`, `/history`, `/logout`, etc.
+Antes de começar, certifique-se de ter instalado:
 
-## Dependências
+- [Node.js](https://nodejs.org/) (versão 14 ou superior) 🟢  
+- [npm](https://www.npmjs.com/) (incluso com o Node.js) 📦  
+- Um servidor backend configurado em `http://localhost:5000` com os endpoints:  
+  `/login`, `/register`, `/history`, `/logout`, entre outros.
 
-As seguintes bibliotecas são utilizadas no projeto e serão instaladas automaticamente com o comando `npm install`:
+## 📦 Dependências
 
-| Biblioteca     | Versão  | Descrição                                       |
-|----------------|---------|-------------------------------------------------|
-| `react`        | ^18.2.0 | Biblioteca principal para construção de UI      |
-| `react-dom`    | ^18.2.0 | Renderização de componentes React no DOM        |
-| `react-scripts`| ^5.0.1  | Scripts e configurações para o React (Create React App) |
+As bibliotecas abaixo são instaladas automaticamente com o comando `npm install`:
+
+| Biblioteca       | Versão   | Descrição                                      |
+|------------------|----------|------------------------------------------------|
+| `react`          | ^18.2.0  | Biblioteca para construção de interfaces       |
+| `react-dom`      | ^18.2.0  | Renderização de componentes React no DOM       |
+| `react-scripts`  | ^5.0.1   | Scripts e configurações para o React (CRA)     |
 
 ### Exemplo do `package.json`
 
@@ -48,3 +52,33 @@ As seguintes bibliotecas são utilizadas no projeto e serão instaladas automati
     "react-scripts": "5.0.1"
   }
 }
+```
+
+## 🚀 Como Iniciar
+
+1. **Clone o repositório**:  
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   cd calculadora-btus
+   ```
+
+2. **Instale as dependências**:  
+   ```bash
+   npm install
+   ```
+
+3. **Inicie o servidor backend** (se necessário):  
+   Configure o servidor em `http://localhost:5000`.
+
+4. **Inicie a aplicação**:  
+   ```bash
+   npm start
+   ```
+
+   Acesse a aplicação em `http://localhost:3000`.
+
+## 📝 Notas
+
+- Localmente ele pode demorar alguns segundos para carregar o banco de daods e iniciar.
+- Certifique-se de que o backend está configurado corretamente para os endpoints mencionados.  
+- Para personalizar a estilização, edite os arquivos CSS no diretório `src`.  
