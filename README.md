@@ -58,7 +58,7 @@ As bibliotecas abaixo são instaladas automaticamente com o comando `npm install
 
 1. **Clone o repositório**:  
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/Luann8/Backend-uv-btus
    cd calculadora-btus
    ```
 
