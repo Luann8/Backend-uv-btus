@@ -19,7 +19,7 @@ Uma aplicação web para calcular a potência ideal de ar-condicionado (em BTUs)
 ## 🛠️ Tecnologias Utilizadas
 
 - **Frontend**: ⚛️ React.js, 🎨 CSS  
-- **Backend**: 🖥️ Node.js (ajustar conforme o servidor utilizado)  
+- **Backend**: 🖥️ Node.js com Express 
 - **API**: 🌐 Fetch nativo para comunicação com o servidor  
 - **Estilização**: 🖌️ CSS customizado com transições suaves e sombras  
 
