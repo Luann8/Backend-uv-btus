@@ -1,4 +1,4 @@
-# 🧮 Calculadora de BTUs
+# 🎚️ Calculadora de BTUs
 
 Uma aplicação web para calcular a potência ideal de ar-condicionado (em BTUs) com base na área, número de pessoas e aparelhos eletrônicos, além de buscar instaladores pelo CEP.
 
