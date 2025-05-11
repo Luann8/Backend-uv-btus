@@ -8,10 +8,7 @@ Uma aplicação web para calcular a potência ideal de ar-condicionado (em BTUs)
   Insira a área (m²), número de pessoas e aparelhos eletrônicos para calcular a potência necessária.
 
 - **Autenticação**:  
-  Registro e login de usuários com sessões persistentes.
-
-- **Histórico**:  
-  Visualize, edite e exclua cálculos salvos.
+  Um sistema suimples de senha protegida por criptográfia.
 
 - **Design Responsivo**:  
   Interface adaptável para desktops e dispositivos móveis.
