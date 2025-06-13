@@ -5,10 +5,84 @@
   box-sizing: border-box;
 }
 
-body {
+/* Definindo variáveis CSS para temas */
+:root {
+  --background-color: #f4f7fa;
+  --text-color: #333;
+  --header-bg: #2c3e50;
+  --header-text: #ffffff;
+  --section-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --nav-link-bg-hover: #34495e;
+  --nav-link-color: #ecf0f1;
+  --nav-link-active-bg: #3498db;
+  --tab-bg: #ecf0f1;
+  --tab-active-bg: #3498db;
+  --tab-hover-bg: #dfe6e9;
+  --tab-active-hover-bg: #2980b9;
+  --input-border: #ddd;
+  --input-focus-border: #3498db;
+  --primary-btn-bg: #3498db;
+  --primary-btn-hover-bg: #2980b9;
+  --secondary-btn-bg: #ecf0f1;
+  --secondary-btn-color: #2c3e50;
+  --secondary-btn-hover-bg: #dfe6e9;
+  --cancel-btn-bg: #e74c3c;
+  --cancel-btn-hover-bg: #c0392b;
+  --cancel-btn-active-bg: #a93226;
+  --result-box-bg: #ecf0f1;
+  --subtitle-color: #7f8c8d;
+  --installer-card-bg: #f9f9f9;
+  --installer-info-small: #95a5a6;
+  --edit-btn-bg: #f1c40f;
+  --edit-btn-hover-bg: #d4ac0d;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.5);
+  --modal-content-bg: #ffffff;
+  --tab-content-bg: #ffffff;
+  --form-container-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --header-bg: #121212;
+  --header-text: #ffffff;
+  --section-bg: #2a2a2a;
+  --shadow-color: none;
+  --nav-link-bg-hover: #1f2a44;
+  --nav-link-color: #b0bec5;
+  --nav-link-active-bg: #1976d2;
+  --tab-bg: #2a2a2a;
+  --tab-active-bg: #1976d2;
+  --tab-hover-bg: #333333;
+  --tab-active-hover-bg: #1565c0;
+  --input-border: #444;
+  --input-focus-border: #1976d2;
+  --primary-btn-bg: #1976d2;
+  --primary-btn-hover-bg: #1565c0;
+  --secondary-btn-bg: #2a2a2a;
+  --secondary-btn-color: #e0e0e0;
+  --secondary-btn-hover-bg: #333333;
+  --cancel-btn-bg: #c62828;
+  --cancel-btn-hover-bg: #b71c1c;
+  --cancel-btn-active-bg: #9a0007;
+  --result-box-bg: #2a2a2a;
+  --subtitle-color: #90a4ae;
+  --installer-card-bg: #2a2a2a;
+  --installer-info-small: #78909c;
+  --edit-btn-bg: #fbc02d;
+  --edit-btn-hover-bg: #e0a800;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.7);
+  --modal-content-bg: #2a2a2a;
+  --tab-content-bg: #2a2a2a;
+  --form-container-bg: #2a2a2a;
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: 'Arial', sans-serif;
-  background-color: #f4f7fa;
-  color: #333;
 }
 
 /* Container principal */
@@ -16,15 +90,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
 }
 
 /* Header */
 .app-header {
-  background-color: #2c3e50;
+  background-color: var(--header-bg);
   padding: 20px;
   text-align: center;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--header-text);
+  box-shadow: var(--shadow-color);
 }
 
 .app-header h1 {
@@ -39,7 +114,7 @@ body {
 }
 
 .nav-link {
-  color: #ecf0f1;
+  color: var(--nav-link-color);
   text-decoration: none;
   font-weight: bold;
   padding: 8px 16px;
@@ -51,7 +126,12 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #34495e;
+  background-color: var(--nav-link-bg-hover);
+}
+
+.nav-link.active {
+  background-color: var(--nav-link-active-bg);
+  color: var(--header-text);
 }
 
 /* Main */
@@ -61,18 +141,19 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .page-section {
-  background-color: white;
+  background-color: var(--section-bg);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-color);
 }
 
 .page-section h2 {
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -80,7 +161,7 @@ body {
 }
 
 .subtitle {
-  color: #7f8c8d;
+  color: var(--subtitle-color);
   margin-bottom: 20px;
 }
 
@@ -92,8 +173,8 @@ body {
 }
 
 .tab-btn {
-  background-color: #ecf0f1;
-  color: #2c3e50;
+  background-color: var(--tab-bg);
+  color: var(--secondary-btn-color);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -106,26 +187,28 @@ body {
 }
 
 .tab-btn.active {
-  background-color: #3498db;
-  color: white;
+  background-color: var(--tab-active-bg);
+  color: var(--header-text);
 }
 
 .tab-btn:hover {
-  background-color: #dfe6e9;
+  background-color: var(--tab-hover-bg);
 }
 
 .tab-btn.active:hover {
-  background-color: #2980b9;
+  background-color: var(--tab-active-hover-bg);
 }
 
 .tab-content {
   padding: 20px 0;
+  background-color: var(--tab-content-bg);
 }
 
 /* Formulários */
 .form-container {
   display: grid;
   gap: 15px;
+  background-color: var(--form-container-bg);
 }
 
 .input-group {
@@ -136,7 +219,7 @@ body {
 .input-group label {
   font-weight: bold;
   margin-bottom: 5px;
-  color: #2c3e50;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -144,14 +227,16 @@ body {
 
 .input-group input {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
   font-size: 1rem;
   transition: border-color 0.3s;
+  background-color: var(--section-bg);
+  color: var(--text-color);
 }
 
 .input-group input:focus {
-  border-color: #3498db;
+  border-color: var(--input-focus-border);
   outline: none;
 }
 
@@ -162,8 +247,8 @@ body {
 
 /* Botões */
 .primary-btn {
-  background-color: #3498db;
-  color: white;
+  background-color: var(--primary-btn-bg);
+  color: var(--header-text);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -172,26 +257,26 @@ body {
 }
 
 .primary-btn:hover {
-  background-color: #2980b9;
+  background-color: var(--primary-btn-hover-bg);
 }
 
 .secondary-btn {
-  background-color: #ecf0f1;
-  color: #2c3e50;
+  background-color: var(--secondary-btn-bg);
+  color: var(--secondary-btn-color);
   padding: 10px 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .secondary-btn:hover {
-  background-color: #dfe6e9;
+  background-color: var(--secondary-btn-hover-bg);
 }
 
 .cancel-btn {
-  background-color: #e74c3c; /* Vermelho suave */
-  color: white;
+  background-color: var(--cancel-btn-bg);
+  color: var(--header-text);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -201,30 +286,30 @@ body {
 }
 
 .cancel-btn:hover {
-  background-color: #c0392b; /* Vermelho mais escuro */
+  background-color: var(--cancel-btn-hover-bg);
 }
 
 .cancel-btn:active {
-  background-color: #a93226; /* Efeito de clique */
+  background-color: var(--cancel-btn-active-bg);
 }
 
 /* Resultado */
 .result-box {
   margin-top: 20px;
   padding: 15px;
-  background-color: #ecf0f1;
+  background-color: var(--result-box-bg);
   border-radius: 5px;
   text-align: center;
 }
 
 .result-box h3 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 
 .result-box span {
   font-weight: bold;
-  color: #3498db;
+  color: var(--primary-btn-bg);
 }
 
 .purchase-links {
@@ -232,7 +317,7 @@ body {
 }
 
 .purchase-links h4 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -249,24 +334,26 @@ body {
 }
 
 .purchase-links a {
-  color: #3498db;
+  color: var(--primary-btn-bg);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .purchase-links a:hover {
-  color: #2980b9;
+  color: var(--primary-btn-hover-bg);
   text-decoration: underline;
 }
 
 /* Registro de Instaladores */
 .installer-register-container {
   margin-bottom: 20px;
+  background-color: var(--section-bg);
 }
 
 /* Lista de Instaladores */
 .installers-list-container {
   margin-top: 20px;
+  background-color: var(--section-bg);
 }
 
 .search-box {
@@ -278,7 +365,7 @@ body {
 
 .search-box label {
   font-weight: bold;
-  color: #2c3e50;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -287,8 +374,10 @@ body {
 .search-box input {
   padding: 10px;
   width: 250px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
+  background-color: var(--section-bg);
+  color: var(--text-color);
 }
 
 .installers-list {
@@ -301,18 +390,18 @@ body {
   align-items: center;
   padding: 15px;
   margin-bottom: 10px;
-  background-color: #f9f9f9;
+  background-color: var(--installer-card-bg);
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-color);
 }
 
 .installer-info h4 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 5px;
 }
 
 .installer-info p {
-  color: #7f8c8d;
+  color: var(--subtitle-color);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -320,7 +409,7 @@ body {
 
 .installer-info small {
   display: block;
-  color: #95a5a6;
+  color: var(--installer-info-small);
   margin-top: 5px;
 }
 
@@ -329,34 +418,37 @@ body {
   gap: 10px;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn {
+  background-color: var(--edit-btn-bg);
+  color: var(--header-text);
   padding: 8px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.edit-btn {
-  background-color: #f1c40f;
-  color: white;
-}
-
 .edit-btn:hover {
-  background-color: #d4ac0d;
+  background-color: var(--edit-btn-hover-bg);
 }
 
 .delete-btn {
-  background-color: #e74c3c;
-  color: white;
+  background-color: var(--cancel-btn-bg);
+  color: var(--header-text);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
-  background-color: #c0392b;
+  background-color: var(--cancel-btn-hover-bg);
 }
 
 .no-results {
   text-align: center;
-  color: #7f8c8d;
+  color: var(--subtitle-color);
+  background-color: var(--section-bg);
+  padding: 15px;
 }
 
 /* Modal */
@@ -366,23 +458,24 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--modal-overlay-bg);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background-color: white;
+  background-color: var(--modal-content-bg);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   width: 400px;
   max-width: 90%;
+  color: var(--text-color);
 }
 
 .modal-content h3 {
-  color: #2c3e50;
+  color: var(--text-color);
   margin-bottom: 15px;
 }
 
@@ -390,8 +483,10 @@ body {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
+  background-color: var(--section-bg);
+  color: var(--text-color);
 }
 
 .modal-actions {
@@ -402,9 +497,25 @@ body {
 
 /* Footer */
 .app-footer {
-  background-color: #2c3e50;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
+}
+
+/* Estilo do botão de toggle de tema */
+.theme-toggle {
+  background-color: var(--secondary-btn-bg);
+  color: var(--secondary-btn-color);
+  padding: 8px 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--secondary-btn-hover-bg);
 }
