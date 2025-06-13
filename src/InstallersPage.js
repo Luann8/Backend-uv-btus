@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import InstallersList from './InstallersList';
 import InstallerRegister from './InstallerRegister';
 import { FaUsers, FaPlus, FaSearch } from 'react-icons/fa';
@@ -11,7 +11,11 @@ const InstallersPage = () => {
 
   const handleEditInstaller = (installer) => {
     setActiveTab('register');
-    document.querySelector('.installer-register-container form').scrollIntoView({ behavior: 'smooth' });
+    // Garante que o formulário fique visível ao editar
+    const formElement = document.querySelector('.installer-register-container form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
     setTimeout(() => {
       window.dispatchEvent(new CustomEvent('editInstaller', { detail: installer }));
     }, 100);
@@ -35,6 +39,7 @@ const InstallersPage = () => {
       });
 
       if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+      
       setRefreshTrigger(prev => prev + 1);
       setShowDeleteModal(null);
       setDeleteCodeInput('');
@@ -51,16 +56,19 @@ const InstallersPage = () => {
   return (
     <section className="page-section installers-page">
       <h2><FaUsers /> Instaladores</h2>
+
       <div className="tabs">
         <button
           className={`tab-btn ${activeTab === 'register' ? 'active' : ''}`}
           onClick={() => setActiveTab('register')}
+          type="button"
         >
           <FaPlus /> Registrar Instalador
         </button>
         <button
           className={`tab-btn ${activeTab === 'search' ? 'active' : ''}`}
           onClick={() => setActiveTab('search')}
+          type="button"
         >
           <FaSearch /> Buscar Instaladores
         </button>
@@ -87,10 +95,15 @@ const InstallersPage = () => {
               value={deleteCodeInput}
               onChange={(e) => setDeleteCodeInput(e.target.value)}
               placeholder="Código de exclusão"
+              autoFocus
             />
             <div className="modal-actions">
-              <button onClick={() => confirmDelete(showDeleteModal.id)} className="primary-btn">Confirmar</button>
-              <button onClick={() => setShowDeleteModal(null)} className="secondary-btn">Cancelar</button>
+              <button onClick={() => confirmDelete(showDeleteModal.id)} className="primary-btn" type="button">
+                Confirmar
+              </button>
+              <button onClick={() => setShowDeleteModal(null)} className="secondary-btn" type="button">
+                Cancelar
+              </button>
             </div>
           </div>
         </div>
