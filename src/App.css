@@ -31,6 +31,8 @@
   --cancel-btn-hover-bg: #c0392b;
   --cancel-btn-active-bg: #a93226;
   --result-box-bg: #ecf0f1;
+  --result-text-color: #333;
+  --result-highlight-color: #3498db;
   --subtitle-color: #7f8c8d;
   --installer-card-bg: #f9f9f9;
   --installer-info-small: #95a5a6;
@@ -66,7 +68,9 @@
   --cancel-btn-bg: #c62828;
   --cancel-btn-hover-bg: #b71c1c;
   --cancel-btn-active-bg: #9a0007;
-  --result-box-bg: #2a2a2a;
+  --result-box-bg: #333333;
+  --result-text-color: #ffffff;
+  --result-highlight-color: #64b5f6;
   --subtitle-color: #90a4ae;
   --installer-card-bg: #2a2a2a;
   --installer-info-small: #78909c;
@@ -302,14 +306,24 @@ html, body {
   text-align: center;
 }
 
+.result-box * {
+  color: var(--result-text-color);
+}
+
 .result-box h3 {
-  color: var(--text-color);
+  color: var(--result-text-color);
   margin-bottom: 10px;
+}
+
+.result-box p {
+  color: var(--result-text-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
 }
 
 .result-box span {
   font-weight: bold;
-  color: var(--primary-btn-bg);
+  color: var(--result-highlight-color);
 }
 
 .purchase-links {
