@@ -17,10 +17,16 @@ const App = () => {
       <header className="app-header">
         <h1>Calculadora de BTUs</h1>
         <nav className="app-nav">
-          <NavLink to="/" className="nav-link" activeClassName="active">
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
             <FaCalculator /> Calculadora
           </NavLink>
-          <NavLink to="/installers" className="nav-link" activeClassName="active">
+          <NavLink 
+            to="/installers" 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+          >
             <FaUsers /> Instaladores
           </NavLink>
           <button className="theme-toggle" onClick={toggleTheme}>
